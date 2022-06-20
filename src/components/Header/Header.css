@@ -1,0 +1,50 @@
+header {
+    display: flex;
+    background: rgb(93, 19, 133);
+    background: linear-gradient(90deg, rgba(93, 19, 133, 1) 22%, rgba(82, 4, 88, 0.9864320728291317) 86%);
+    padding-left: 10px;
+}
+
+.header-logo {
+    width: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: -10px;
+    color:whitesmoke
+
+}
+
+.header-tabs {
+    display: flex;
+    width: 53%;
+    align-self: center;
+    justify-content: center;
+
+}
+
+.tab {
+    border:2px solid white;
+    padding: 5px;
+    border-radius:10px;
+    color:white;
+    margin-left: 60px;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 300ms;
+    text-decoration: none;
+}
+
+a:hover{
+    border:2px solid rgba(93, 19, 133, 1);
+    color:rgba(93, 19, 133, 1);
+    background-color: whitesmoke;
+    cursor: pointer;
+
+}
+
+.active{
+    border:2px solid rgba(93, 19, 133, 1);
+    color:rgba(93, 19, 133, 1);
+    background-color: whitesmoke;
+    cursor: pointer;
+}

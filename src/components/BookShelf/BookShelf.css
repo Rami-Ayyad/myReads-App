@@ -1,0 +1,16 @@
+.bookshelf{
+    padding: 0;
+}
+
+.bookshelf-title{
+    text-align: center;
+    font-style:italic ;
+    padding: 5px;
+    margin-top: 0;
+    border-bottom: 3px solid rgba(93, 19, 133, 1);
+    border-top: 3px solid rgba(93, 19, 133, 1);
+    color:rgba(93, 19, 133, 1);
+    background: rgb(246,246,246);
+    background: linear-gradient(90deg, rgba(246,246,246,1) 0%, rgba(191,199,208,0.9) 100%);
+}
+

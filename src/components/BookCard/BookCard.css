@@ -1,0 +1,11 @@
+.book-authors {
+    font-size: 14px;
+    font-weight: 200;
+    color: rgba(32, 20, 61, 0.579);
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(32, 20, 61);
+}
