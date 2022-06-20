@@ -4,6 +4,8 @@ import BookShelf from '../../components/BookShelf/BookShelf';
 import { getAll } from '../../services/BooksAPI'
 import { useBooksContext } from '../../contexts/booksContext'
 import Header from '../../components/Header/Header';
+import { Link } from 'react-router-dom'
+
 
 
 function App() {
@@ -27,11 +29,11 @@ function App() {
 
         <div className="list-books-content">
           <div>
-            {shelfs.map((shelf, index)=><BookShelf key={index} shelf={shelf} />)}
+            {shelfs.map((shelf, index) => <BookShelf key={index} shelf={shelf} />)}
           </div>
         </div>
         <div className="open-search">
-          <button >Add a book</button>
+          <Link to="/search" className='butn' />
         </div>
       </div>
 

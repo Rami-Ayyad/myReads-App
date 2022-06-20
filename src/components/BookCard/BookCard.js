@@ -3,20 +3,19 @@ import './BookCard.css'
 import { useBooksContext } from '../../contexts/booksContext'
 
 
-export default function BookCard({shelf, book}) {
+export default function BookCard({ shelf, book }) {
 
     // const allBooks = useBooksContext()
     // const bookPerShelf = allBooks.filter((book) => {
     //     return book.shelf === shelf
     // })
 
-    console.log(book)
     return (
         <ol className="books-grid">
             <li>
                 <div className="book">
                     <div className="book-top">
-                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})`}}></div>
+                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
                         <div className="book-shelf-changer">
                             <select>
                                 <option value="move" disabled>Move to...</option>
