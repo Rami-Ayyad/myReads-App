@@ -10,7 +10,7 @@ import Header from './components/Header/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BooksProvider>
       <BrowserRouter>
 
@@ -23,6 +23,6 @@ root.render(
       </BrowserRouter>
 
     </BooksProvider>
-  </React.StrictMode>
+  // </React.StrictMode> 
 );
 

@@ -18,8 +18,8 @@ export default function Search() {
             }
         })
     },[searchInput])
-    
 
+    
     return (
         <div>
 
@@ -38,7 +38,7 @@ export default function Search() {
                 </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
-                        {searchedBooks.map((book) => <li> <BookCard key={book.id} book={book}/> </li>)}
+                        {searchedBooks.map((book) => <li key={book.id}> <BookCard  book={book}/> </li>)}
                     </ol>
                 </div>
             </div>

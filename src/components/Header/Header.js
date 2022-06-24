@@ -9,8 +9,8 @@ export default function Header() {
         <h1>MyReads</h1>
       </div>
       <div className='header-tabs'>
-        <NavLink to="/" className='tab' activeClassName="active" >My Shelfs</NavLink>
-        <NavLink to="/search" className='tab' activeClassName="active">Books Search</NavLink>
+        <NavLink to="/" className='tab'  >My Shelfs</NavLink>
+        <NavLink to="/search" className='tab'>Books Search</NavLink>
       </div>
     </header>
   )

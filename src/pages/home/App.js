@@ -5,17 +5,25 @@ import { getAll } from '../../services/BooksAPI'
 import { useBooksContext } from '../../contexts/booksContext'
 import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom'
+import { update } from '../../services/BooksAPI'
 
 
 
 function App() {
 
-  const allBooks = useBooksContext()
+  // console.log("%c app rendered","background:yellow;color:red")
+
+  const {books:allBooks, shelf} = useBooksContext()
+  // console.log(allBooks)
+
   const shelfs = allBooks
     .map(book => book.shelf)
     .filter((shelf, shelfIndex, shelfsArr) => {
       return shelfsArr.indexOf(shelf) == shelfIndex
     })
+
+
+    
 
 
 
