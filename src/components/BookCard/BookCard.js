@@ -21,7 +21,7 @@ export default function BookCard({book}) {
                 <div className="book">
                     <div className="book-top">
                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks?.smallThumbnail})` }}></div>
-                        <div onClick={e=>handleClick()} className="book-shelf-changer">
+                        <div className="book-shelf-changer">
                             <select  onChange={e => handelSelectedShelf(e, book)}>
                                 <option selected disabled>Move to...</option>
                                 <option value="currentlyReading" >{book.shelf === "currentlyReading"?"✓ Currently Reading":"Currently Reading"}</option>
