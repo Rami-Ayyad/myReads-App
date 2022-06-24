@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useBooksContext } from '../../contexts/booksContext'
-import Header from '../../components/Header/Header'
 import './Search.css'
 import { search } from '../../services/BooksAPI'
 import BookCard from '../../components/BookCard/BookCard'
@@ -10,11 +9,18 @@ export default function Search() {
     const [searchedBooks, setSearchedBooks] = useState([])
     console.log(searchedBooks)
 
+    const {books} = useBooksContext()
+
+    const booksIds = books.map((apiBook)=>apiBook.id)
+    console.log(booksIds)
+
     useEffect(() => {
         search(searchInput).then((res) =>{
             if(Array.isArray(res)) {
-            
-                setSearchedBooks(res)
+                let filterd = res.filter((book)=>!booksIds.includes(book.id))
+                console.log(filterd)
+                
+                setSearchedBooks([...filterd,...books])
             }
         })
     },[searchInput])
@@ -22,7 +28,6 @@ export default function Search() {
     
     return (
         <div>
-
 
             <div className="search-books">
                 <div className="search-books-bar">

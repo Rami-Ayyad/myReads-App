@@ -1,40 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './BookCard.css'
 import { useBooksContext } from '../../contexts/booksContext'
-import { update } from '../../services/BooksAPI'
 
-//, updateShelf
+
+
 export default function BookCard({book}) {
-    // console.log("bookcard rendered")
-    const [selectedShelf, setSelectedShelf] = useState("")
-    const [objOfShelfs , setBbjOfShelfs] = useState("")
 
-
-    const {update, shelf, books} = useBooksContext()
+    const {update} = useBooksContext()
     const [setBook, setSehlf] = update
 
-    function handleClick() {
-        if(books.some((apiBook)=> apiBook.id === book.id)){
-            console.log(book)
-            book["shelf"] = shelf
-            console.log(book)
-        }
-    }
-
     function handelSelectedShelf(e, book){
-        // console.log("select happend")
-    //     console.log("from card fun")
-    //     updateShelf( book, e.target.value)
-
         setBook(book)
-        // console.log(book)
-
         setSehlf(e.target.value)
-        // console.log(e.target.value)
     }
     
 
-    
     return (
         <ol className="books-grid">
             <li>
