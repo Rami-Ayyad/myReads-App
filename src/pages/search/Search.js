@@ -7,20 +7,24 @@ import BookCard from '../../components/BookCard/BookCard'
 export default function Search() {
     const [searchInput, setSearchIput ] = useState("")
     const [searchedBooks, setSearchedBooks] = useState([])
-    console.log(searchedBooks)
+    // console.log(searchedBooks)
 
     const {books} = useBooksContext()
 
     const booksIds = books.map((apiBook)=>apiBook.id)
-    console.log(booksIds)
+    // console.log(booksIds)
 
     useEffect(() => {
         search(searchInput).then((res) =>{
-            if(Array.isArray(res)) {
+            if(Array.isArray(res) && searchInput) {
                 let filterd = res.filter((book)=>!booksIds.includes(book.id))
                 console.log(filterd)
                 
-                setSearchedBooks([...filterd,...books])
+                    setSearchedBooks([...filterd,...books])
+               
+            }
+            else{
+                setSearchedBooks([])
             }
         })
     },[searchInput])
