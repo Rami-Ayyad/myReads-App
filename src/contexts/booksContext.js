@@ -1,6 +1,5 @@
 import React from "react";
 import { useContext, useState, useEffect } from "react";
-
 import { getAll, update } from "../services/BooksAPI";
 
 const BooksContext = React.createContext()
@@ -12,13 +11,13 @@ export function BooksProvider({ children }) {
 
 
     useEffect(() => {
-        update(book, shelf).then(()=>getAll()).then((books) => { setBooks(books) })
+        update(book, shelf).then(() => getAll()).then((books) => { setBooks(books) })
 
-    }, [shelf,book])
+    }, [shelf, book])
 
     useEffect(() => {
         getAll()
-        .then((books) => { setBooks(books) })
+            .then((books) => { setBooks(books) })
 
     }, [])
 

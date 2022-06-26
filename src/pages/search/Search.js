@@ -5,31 +5,25 @@ import { search } from '../../services/BooksAPI'
 import BookCard from '../../components/BookCard/BookCard'
 
 export default function Search() {
-    const [searchInput, setSearchIput ] = useState("")
+    const [searchInput, setSearchIput] = useState("")
     const [searchedBooks, setSearchedBooks] = useState([])
-    // console.log(searchedBooks)
-
-    const {books} = useBooksContext()
-
-    const booksIds = books.map((apiBook)=>apiBook.id)
-    // console.log(booksIds)
+    const { books } = useBooksContext()
+    const booksIds = books.map((apiBook) => apiBook.id)
 
     useEffect(() => {
-        search(searchInput).then((res) =>{
-            if(Array.isArray(res) && searchInput) {
-                let filterd = res.filter((book)=>!booksIds.includes(book.id))
-                console.log(filterd)
-                
-                    setSearchedBooks([...filterd,...books])
-               
+        search(searchInput).then((res) => {
+            if (Array.isArray(res) && searchInput) {
+                let filterd = res.filter((book) => !booksIds.includes(book.id))
+
+                setSearchedBooks([...filterd, ...books])
             }
-            else{
+            else {
                 setSearchedBooks([])
             }
         })
-    },[searchInput])
+    }, [searchInput])
 
-    
+
     return (
         <div>
 
@@ -40,14 +34,14 @@ export default function Search() {
 
                         <input type="text" placeholder="Search by title or author"
                             value={searchInput}
-                            onChange={(e)=>setSearchIput(e.target.value)}
+                            onChange={(e) => setSearchIput(e.target.value)}
                         />
 
                     </div>
                 </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
-                        {searchedBooks.map((book) => <li key={book.id}> <BookCard  book={book}/> </li>)}
+                        {searchedBooks.map((book) => <li key={book.id}> <BookCard book={book} /> </li>)}
                     </ol>
                 </div>
             </div>

@@ -9,3 +9,4 @@ Is a simple application that helps you choose your favorite books and organise t
 - The search page accepts specific search terms which you could finde in the `SEARCH_TERMS.md` file.
 - It takes about half a second to move a book from one shelf to another.
 - The state of the application is managed using the Context API.
+- PropTypes are added only for components that accept props.
